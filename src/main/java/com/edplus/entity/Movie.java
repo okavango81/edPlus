@@ -18,24 +18,37 @@ public class Movie {
     @Column(name = "id")
     private Long id;
 
+    @Column(nullable = false, unique = true)
     private String title;
+
+    @Column(nullable = false, length = 3)
     private String minutes;
+
+    @Column(length = 7)
     private String duration;
+
+    @Column(nullable = false, length = 4)
     private String releaseYear;
+
+    @Column(nullable = false, length = 2)
     private String classification;
+
     private String cardURL;
     private String mainURL;
+
+    @Column(nullable = false, columnDefinition = "text")
     private String synopsis;
 
+    //construtor
     public Movie(String title, String minutes, String releaseYear, String classification, String cardURL, String mainURL, String synopsis) {
 
-        this.title = title;
+        this.title = title.toUpperCase();
         this.minutes = minutes;
         duration = fromMinutesToHoursAndMinutes(minutes);
         this.releaseYear = releaseYear;
-        this.classification = classification;
-        this.cardURL = cardURL;
-        this.mainURL = mainURL;
+        this.classification = classification.toUpperCase();
+        this.cardURL = cardURL.toLowerCase();
+        this.mainURL = mainURL.toLowerCase();
         this.synopsis = synopsis;
     }
 
