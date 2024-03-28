@@ -1,9 +1,15 @@
 package com.edplus.entity.dto;
 
 import jakarta.validation.constraints.*;
+import lombok.Data;
 import lombok.Getter;
 
+import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.Map;
+
 @Getter
+@Data
 public class MovieRegisterDTO {
 
     @NotBlank(message = "must not be null")
@@ -33,4 +39,5 @@ public class MovieRegisterDTO {
     @NotBlank(message = "must not be null")
     @Size(min = 15, message = "must have at least {min} characters")
     private String synopsis;
+
 }
