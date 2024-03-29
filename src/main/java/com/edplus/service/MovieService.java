@@ -3,6 +3,7 @@ package com.edplus.service;
 import com.edplus.entity.Movie;
 import com.edplus.entity.dto.MovieCardDTO;
 import com.edplus.entity.dto.MovieRegisterDTO;
+import com.edplus.entity.dto.MovieUpdateURLDTO;
 import com.edplus.repository.MovieRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -35,5 +36,14 @@ public class MovieService {
         Optional<Movie> movie = movieRepository.findById(id);
 
         return ResponseEntity.ok().body( new MovieCardDTO(movie.get()));
+    }
+
+    @Transactional
+    public ResponseEntity<MovieCardDTO> updateURL(MovieUpdateURLDTO movie, Long id){
+        Optional<Movie> m = movieRepository.findById(id);
+        m.get().setCardURL(movie.getCardURL());
+        m.get().setMainURL(movie.getMainURL());
+
+        return ResponseEntity.ok().body(new MovieCardDTO(m.get()));
     }
 }

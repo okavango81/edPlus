@@ -63,7 +63,6 @@ public class GlobalException {
 
         String message = "name/title already registered in the database";
         return new ObjectException(request.getRequestURI(), request.getMethod(), HttpStatus.CONFLICT.value(),message);
-
     }
 
 }

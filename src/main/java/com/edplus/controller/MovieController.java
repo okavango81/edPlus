@@ -2,6 +2,7 @@ package com.edplus.controller;
 
 import com.edplus.entity.dto.MovieCardDTO;
 import com.edplus.entity.dto.MovieRegisterDTO;
+import com.edplus.entity.dto.MovieUpdateURLDTO;
 import com.edplus.service.MovieService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -23,5 +24,10 @@ public class MovieController {
     @GetMapping("/{id}")
     public ResponseEntity<MovieCardDTO> searchMovieById(@PathVariable Long id){
         return movieService.queryId(id);
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<MovieCardDTO> updatingURL(@Valid @RequestBody MovieUpdateURLDTO movieUpdateURLDTO, @PathVariable Long id){
+        return movieService.updateURL(movieUpdateURLDTO, id);
     }
 }
