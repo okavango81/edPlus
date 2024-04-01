@@ -3,11 +3,13 @@ package com.edplus.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Objects;
 
 @Entity
 @Getter
+@Setter
 @NoArgsConstructor
 public class Director {
     @Id
