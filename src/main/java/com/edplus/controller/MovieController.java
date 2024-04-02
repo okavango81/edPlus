@@ -2,6 +2,7 @@ package com.edplus.controller;
 
 import com.edplus.entity.Movie;
 import com.edplus.entity.dto.MovieCardDTO;
+import com.edplus.entity.dto.MovieMainDTO;
 import com.edplus.entity.dto.MovieRegisterDTO;
 import com.edplus.entity.dto.MovieUpdateURLDTO;
 import com.edplus.service.MovieService;
@@ -35,7 +36,7 @@ public class MovieController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Movie>> allMovies(){
+    public ResponseEntity<List<MovieMainDTO>> allMovies(){
         return movieService.allMovies();
     }
 

@@ -2,6 +2,7 @@ package com.edplus.service;
 
 import com.edplus.entity.Movie;
 import com.edplus.entity.dto.MovieCardDTO;
+import com.edplus.entity.dto.MovieMainDTO;
 import com.edplus.entity.dto.MovieRegisterDTO;
 import com.edplus.entity.dto.MovieUpdateURLDTO;
 import com.edplus.repository.MovieRepository;
@@ -34,9 +35,8 @@ public class MovieService {
     }
 
     @Transactional(readOnly = true)
-    public ResponseEntity<List<Movie>> allMovies(){
-        //return ResponseEntity.ok().body(movieRepository.findAll().stream().map(MovieCardDTO::new).collect(Collectors.toList()));
-        return ResponseEntity.ok().body(movieRepository.findAll());
+    public ResponseEntity<List<MovieMainDTO>> allMovies(){
+        return ResponseEntity.ok().body(movieRepository.findAll().stream().map(MovieMainDTO::new).collect(Collectors.toList()));
     }
 
     @Transactional(readOnly = true)
