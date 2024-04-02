@@ -54,4 +54,9 @@ public class MovieService {
 
         return ResponseEntity.ok().body(new MovieCardDTO(m.get()));
     }
+
+    @Transactional(readOnly = true)
+    public ResponseEntity<List<MovieCardDTO>> search(String param){
+        return ResponseEntity.ok().body(movieRepository.findByAnyCriteria(param).stream().map(MovieCardDTO::new).collect(Collectors.toList()));
+    }
 }

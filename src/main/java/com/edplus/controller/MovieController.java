@@ -38,4 +38,9 @@ public class MovieController {
     public ResponseEntity<List<Movie>> allMovies(){
         return movieService.allMovies();
     }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<MovieCardDTO>> search(String param){
+        return movieService.search(param);
+    }
 }
