@@ -2,13 +2,16 @@ package com.edplus.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Objects;
 
 @Entity
 @Getter
+@Setter
 @NoArgsConstructor
 public class Interpreter {
     @Id
@@ -18,6 +21,7 @@ public class Interpreter {
 
     @Column(nullable = false, unique = true)
     @NotBlank(message = "must have not be null")
+    @Size(min = 4, message = "must have at least {min} characters")
     private String name;
 
     public Interpreter(String name){
