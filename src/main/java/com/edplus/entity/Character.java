@@ -12,7 +12,7 @@ import java.util.Objects;
 @Entity
 @Getter
 @Setter
-@Table(name = "movie_character")
+@Table(name = "edplus_characters")
 @NoArgsConstructor
 public class Character {
     @Id

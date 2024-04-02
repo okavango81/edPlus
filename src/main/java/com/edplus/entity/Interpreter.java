@@ -1,5 +1,6 @@
 package com.edplus.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -7,6 +8,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -23,6 +26,10 @@ public class Interpreter {
     @NotBlank(message = "must have not be null")
     @Size(min = 4, message = "must have at least {min} characters")
     private String name;
+
+    @ManyToMany(mappedBy = "starring")
+    @JsonIgnore
+    private List<Movie> movies = new ArrayList<>();
 
     public Interpreter(String name){
         this.name = name.toUpperCase();

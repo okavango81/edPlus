@@ -11,7 +11,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -29,6 +31,12 @@ public class MovieService {
         movieRepository.save(movie);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(new MovieCardDTO(movie));
+    }
+
+    @Transactional(readOnly = true)
+    public ResponseEntity<List<Movie>> allMovies(){
+        //return ResponseEntity.ok().body(movieRepository.findAll().stream().map(MovieCardDTO::new).collect(Collectors.toList()));
+        return ResponseEntity.ok().body(movieRepository.findAll());
     }
 
     @Transactional(readOnly = true)

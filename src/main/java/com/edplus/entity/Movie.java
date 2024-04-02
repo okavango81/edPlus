@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -38,6 +40,14 @@ public class Movie {
 
     @Column(nullable = false, columnDefinition = "text")
     private String synopsis;
+
+    @ManyToOne
+    @JoinTable(name = "movies_directors", joinColumns = @JoinColumn(name = "movie_id"), inverseJoinColumns = @JoinColumn(name = "director_id"))
+    private Director director;
+
+    @ManyToMany
+    @JoinTable(name = "movies_interpreters", joinColumns = @JoinColumn(name = "movie_id"), inverseJoinColumns = @JoinColumn(name = "interpreter_id"))
+    private List<Interpreter> starring = new ArrayList<>();
 
     //construtor
     public Movie(String title, String minutes, String releaseYear, String classification, String cardURL, String mainURL, String synopsis) {
