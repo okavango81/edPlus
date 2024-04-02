@@ -25,6 +25,10 @@ public class Character {
     @Size(min = 3, message = "must have at least {min} characters")
     private String name;
 
+    @ManyToOne
+    @JoinTable(name = "characters_interpreters", joinColumns = @JoinColumn(name = "character_id"), inverseJoinColumns = @JoinColumn(name = "interpreter_id"))
+    private Interpreter interpreter;
+
     public Character(String name){
         this.name = name.toUpperCase();
     }

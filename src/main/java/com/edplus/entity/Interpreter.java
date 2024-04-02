@@ -31,6 +31,10 @@ public class Interpreter {
     @JsonIgnore
     private List<Movie> movies = new ArrayList<>();
 
+    @OneToMany(mappedBy = "interpreter")
+    @JsonIgnore
+    private List<Character> characters = new ArrayList<>();
+
     public Interpreter(String name){
         this.name = name.toUpperCase();
     }
