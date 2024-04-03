@@ -1,4 +1,4 @@
-package com.edplus.entity.dto;
+package com.edplus.entity.dto.movie;
 
 import com.edplus.entity.Movie;
 import lombok.Getter;

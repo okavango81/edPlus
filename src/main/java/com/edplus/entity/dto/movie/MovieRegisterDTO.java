@@ -1,4 +1,4 @@
-package com.edplus.entity.dto;
+package com.edplus.entity.dto.movie;
 
 import jakarta.validation.constraints.*;
 
@@ -23,7 +23,7 @@ public class MovieRegisterDTO {
     private String releaseYear;
 
     @NotBlank(message = "must not be null")
-    @Pattern(regexp = "^(l|L|10|12|16|18)$", message = "The allowed values are: L,10,12,16,18")
+    @Pattern(regexp = "^(l|L|10|12|14|16|18)$", message = "The allowed values are: L,10,12,14,16,18")
     private String classification;
 
     private String cardURL;

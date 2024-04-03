@@ -1,4 +1,4 @@
-package com.edplus.entity.dto;
+package com.edplus.entity.dto.movie;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

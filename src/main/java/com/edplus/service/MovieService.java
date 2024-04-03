@@ -1,10 +1,10 @@
 package com.edplus.service;
 
 import com.edplus.entity.Movie;
-import com.edplus.entity.dto.MovieCardDTO;
-import com.edplus.entity.dto.MovieMainDTO;
-import com.edplus.entity.dto.MovieRegisterDTO;
-import com.edplus.entity.dto.MovieUpdateURLDTO;
+import com.edplus.entity.dto.movie.MovieCardDTO;
+import com.edplus.entity.dto.movie.MovieMainDTO;
+import com.edplus.entity.dto.movie.MovieRegisterDTO;
+import com.edplus.entity.dto.movie.MovieUpdateURLDTO;
 import com.edplus.repository.MovieRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

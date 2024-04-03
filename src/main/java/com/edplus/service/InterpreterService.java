@@ -1,6 +1,7 @@
 package com.edplus.service;
 
 import com.edplus.entity.Interpreter;
+import com.edplus.entity.dto.interpreter.InterpreterRegisterDTO;
 import com.edplus.repository.InterpreterRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -19,7 +20,7 @@ public class InterpreterService {
 
 
     @Transactional
-    public ResponseEntity<Interpreter> register(Interpreter interpreter){
+    public ResponseEntity<Interpreter> register(InterpreterRegisterDTO interpreter){
         return ResponseEntity.status(HttpStatus.CREATED).body(interpreterRepository.save(new Interpreter(interpreter.getName())));
     }
 
@@ -35,7 +36,7 @@ public class InterpreterService {
     }
 
     @Transactional
-    public ResponseEntity<Interpreter> updateName(Interpreter interpreter, Long id){
+    public ResponseEntity<Interpreter> updateName(InterpreterRegisterDTO interpreter, Long id){
         Optional<Interpreter> i = interpreterRepository.findById(id);
         i.get().setName(interpreter.getName().toUpperCase());
         return ResponseEntity.ok().body(i.get());

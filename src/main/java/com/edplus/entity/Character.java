@@ -20,9 +20,7 @@ public class Character {
     @Column(name = "id")
     private Long id;
 
-    @Column(nullable = false, unique = true)
-    @NotBlank(message = "must have not be null")
-    @Size(min = 3, message = "must have at least {min} characters")
+
     private String name;
 
     @ManyToOne

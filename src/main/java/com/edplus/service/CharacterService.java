@@ -1,6 +1,7 @@
 package com.edplus.service;
 
 import com.edplus.entity.Character;
+import com.edplus.entity.dto.character.CharacterRegisterDTO;
 import com.edplus.repository.CharacterRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -18,7 +19,7 @@ public class CharacterService {
     private final CharacterRepository characterRepository;
 
     @Transactional
-    public ResponseEntity<Character> register(Character character){
+    public ResponseEntity<Character> register(CharacterRegisterDTO character){
         return ResponseEntity.status(HttpStatus.CREATED).body(characterRepository.save(new Character(character.getName())));
     }
 
@@ -34,7 +35,7 @@ public class CharacterService {
     }
 
     @Transactional
-    public ResponseEntity<Character> update(Character character, Long id){
+    public ResponseEntity<Character> update(CharacterRegisterDTO character, Long id){
         Optional<Character> c = characterRepository.findById(id);
         c.get().setName(character.getName().toUpperCase());
         return ResponseEntity.ok().body(c.get());

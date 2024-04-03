@@ -1,6 +1,7 @@
 package com.edplus.service;
 
 import com.edplus.entity.Genre;
+import com.edplus.entity.dto.genre.GenreRegisterDTO;
 import com.edplus.repository.GenreRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -19,7 +20,7 @@ public class GenreService {
 
 
     @Transactional
-    public ResponseEntity<Genre> register(Genre genre){
+    public ResponseEntity<Genre> register(GenreRegisterDTO genre){
         return ResponseEntity.status(HttpStatus.CREATED).body(genreRepository.save(new Genre(genre.getName())));
     }
 
@@ -35,7 +36,7 @@ public class GenreService {
     }
 
     @Transactional
-    public ResponseEntity<Genre> updateName(Genre genre, Long id){
+    public ResponseEntity<Genre> updateName(GenreRegisterDTO genre, Long id){
         Optional<Genre> g = genreRepository.findById(id);
         g.get().setName(genre.getName().toUpperCase());
         return ResponseEntity.ok().body(g.get());
