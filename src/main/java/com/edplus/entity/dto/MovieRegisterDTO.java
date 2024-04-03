@@ -1,15 +1,10 @@
 package com.edplus.entity.dto;
 
 import jakarta.validation.constraints.*;
-import lombok.Data;
+
 import lombok.Getter;
 
-import java.lang.reflect.Field;
-import java.util.HashMap;
-import java.util.Map;
-
 @Getter
-@Data
 public class MovieRegisterDTO {
 
     @NotBlank(message = "must not be null")
@@ -21,7 +16,6 @@ public class MovieRegisterDTO {
     @Max(value = 270, message = "The maximum number must be {value}")
     private String minutes;
 
-    private String duration;
 
     @NotBlank(message = "must not be null")
     @Min(value = 1922, message = "must be equal to or greater than {value}")

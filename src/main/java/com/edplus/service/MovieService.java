@@ -35,15 +35,15 @@ public class MovieService {
     }
 
     @Transactional(readOnly = true)
-    public ResponseEntity<List<MovieMainDTO>> allMovies(){
-        return ResponseEntity.ok().body(movieRepository.findAll().stream().map(MovieMainDTO::new).collect(Collectors.toList()));
+    public ResponseEntity<List<MovieCardDTO>> allMovies(){
+        return ResponseEntity.ok().body(movieRepository.findAll().stream().map(MovieCardDTO::new).collect(Collectors.toList()));
     }
 
     @Transactional(readOnly = true)
-    public ResponseEntity<MovieCardDTO> queryId(Long id) {
+    public ResponseEntity<MovieMainDTO> queryId(Long id) {
         Optional<Movie> movie = movieRepository.findById(id);
 
-        return ResponseEntity.ok().body( new MovieCardDTO(movie.get()));
+        return ResponseEntity.ok().body( new MovieMainDTO(movie.get()));
     }
 
     @Transactional
