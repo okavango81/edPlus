@@ -29,7 +29,7 @@ public class Director {
 
     @OneToMany(mappedBy = "director")
     @JsonIgnore
-    private List<Movie> movies = new ArrayList<>();
+    private List<Movie> directedMovies = new ArrayList<>();
 
     public Director(String name){
         this.name = name.toUpperCase();

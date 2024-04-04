@@ -47,7 +47,7 @@ public class Movie {
 
     @ManyToMany
     @JoinTable(name = "movies_interpreters", joinColumns = @JoinColumn(name = "movie_id"), inverseJoinColumns = @JoinColumn(name = "interpreter_id"))
-    private List<Interpreter> starring = new ArrayList<>();
+    private List<Interpreter> interpreters = new ArrayList<>();
 
     @ManyToMany
     @JoinTable(name = "movies_genres", joinColumns = @JoinColumn(name = "movie_id"), inverseJoinColumns = @JoinColumn(name = "genre_id"))
@@ -55,7 +55,7 @@ public class Movie {
 
     @OneToMany
     @JoinTable(name = "movies_characters", joinColumns = @JoinColumn(name = "movie_id"), inverseJoinColumns = @JoinColumn(name = "character_id"))
-    private List<Character> characters = new ArrayList<>();
+    private List<Character> papers = new ArrayList<>();
 
     //construtor
     public Movie(String title, String minutes, String releaseYear, String classification, String cardURL, String mainURL, String synopsis) {

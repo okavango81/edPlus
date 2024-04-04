@@ -27,9 +27,9 @@ public class Interpreter {
     @Size(min = 4, message = "must have at least {min} characters")
     private String name;
 
-    @ManyToMany(mappedBy = "starring")
+    @ManyToMany(mappedBy = "interpreters")
     @JsonIgnore
-    private List<Movie> movies = new ArrayList<>();
+    private List<Movie> actuations = new ArrayList<>();
 
     @OneToMany(mappedBy = "interpreter")
     @JsonIgnore

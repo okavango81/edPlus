@@ -21,9 +21,9 @@ public class MovieMainDTO {
     private String mainURL;
     private String synopsis;
     private Director director;
-    private List<Interpreter> starring = new ArrayList<>();
+    private List<Interpreter> interpreters = new ArrayList<>();
     private List<Genre> genres = new ArrayList<>();
-    private List<Character> characters = new ArrayList<>();
+    private List<Character> papers = new ArrayList<>();
 
     public MovieMainDTO(Movie movie){
         id = movie.getId();
@@ -34,9 +34,9 @@ public class MovieMainDTO {
         mainURL = movie.getMainURL();
         synopsis = movie.getSynopsis();
         director = movie.getDirector();
-        starring = movie.getStarring();
+        interpreters = movie.getInterpreters();
         genres = movie.getGenres();
-        characters = movie.getCharacters();
+        papers = movie.getPapers();
     }
 
 }
