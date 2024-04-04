@@ -32,3 +32,8 @@ The application simulates the logical part (back-end) of a movie streaming platf
 ## Available endpoints
 http://34.95.231.9:8081/docs-edplus.html
 
+##
+## Author
+### Edvaldo Guilherme Leite
+www.linkedin.com/in/edvaldo-guilherme-leite-10ab492b5
+
