@@ -13,7 +13,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-public class SwaggerMovie {
+public class SwaggerMovie
+{
 
     @Retention(RetentionPolicy.RUNTIME)
     @Target(ElementType.METHOD)
@@ -39,7 +40,9 @@ public class SwaggerMovie {
                     )
             }
     )
-    public @interface NewMovie{}
+    public @interface NewMovie
+    {
+    }
 
 
     @Retention(RetentionPolicy.RUNTIME)
@@ -55,10 +58,16 @@ public class SwaggerMovie {
                     @ApiResponse(responseCode = "400", description = "Malformed request syntax",
                             content = @Content(mediaType = "application/json",
                                     schema = @Schema(implementation = ObjectException.class))
+                    ),
+                    @ApiResponse(responseCode = "404", description = "Resource Not Found",
+                            content = @Content(mediaType = "application/json",
+                                    schema = @Schema(implementation = ObjectException.class))
                     )
             }
     )
-    public @interface FindById{}
+    public @interface FindById
+    {
+    }
 
 
     @Retention(RetentionPolicy.RUNTIME)
@@ -74,7 +83,9 @@ public class SwaggerMovie {
             }
     )
 
-    public @interface ReturnALlMovies{}
+    public @interface ReturnALlMovies
+    {
+    }
 
 
     @Retention(RetentionPolicy.RUNTIME)
@@ -89,7 +100,9 @@ public class SwaggerMovie {
                     )
             }
     )
-    public @interface SearchOnMovie{}
+    public @interface SearchOnMovie
+    {
+    }
 
 
     @Retention(RetentionPolicy.RUNTIME)
@@ -112,5 +125,7 @@ public class SwaggerMovie {
                     )
             }
     )
-    public @interface UpdateURLs{}
+    public @interface UpdateURLs
+    {
+    }
 }

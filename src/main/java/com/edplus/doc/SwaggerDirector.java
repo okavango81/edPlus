@@ -54,6 +54,10 @@ public class SwaggerDirector {
                     @ApiResponse(responseCode = "400", description = "Malformed request syntax",
                             content = @Content(mediaType = "application/json",
                                     schema = @Schema(implementation = ObjectException.class))
+                    ),
+                    @ApiResponse(responseCode = "404", description = "Resource Not Found",
+                            content = @Content(mediaType = "application/json",
+                                    schema = @Schema(implementation = ObjectException.class))
                     )
             }
     )

@@ -1,6 +1,5 @@
 package com.edplus.doc;
 
-import com.edplus.entity.Director;
 import com.edplus.entity.Genre;
 import com.edplus.exception.ObjectException;
 import io.swagger.v3.oas.annotations.Operation;
@@ -13,7 +12,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-public class SwaggerGenre {
+public class SwaggerGenre
+{
 
     @Retention(RetentionPolicy.RUNTIME)
     @Target(ElementType.METHOD)
@@ -39,8 +39,9 @@ public class SwaggerGenre {
                     )
             }
     )
-    public @interface NewGenre{}
-
+    public @interface NewGenre
+    {
+    }
 
     @Retention(RetentionPolicy.RUNTIME)
     @Target(ElementType.METHOD)
@@ -54,8 +55,9 @@ public class SwaggerGenre {
                     )
             }
     )
-
-    public @interface ReturnALlGenres{}
+    public @interface ReturnALlGenres
+    {
+    }
 
     @Retention(RetentionPolicy.RUNTIME)
     @Target(ElementType.METHOD)
@@ -70,10 +72,16 @@ public class SwaggerGenre {
                     @ApiResponse(responseCode = "400", description = "Malformed request syntax",
                             content = @Content(mediaType = "application/json",
                                     schema = @Schema(implementation = ObjectException.class))
+                    ),
+                    @ApiResponse(responseCode = "404", description = "Resource Not Found",
+                            content = @Content(mediaType = "application/json",
+                                    schema = @Schema(implementation = ObjectException.class))
                     )
             }
     )
-    public @interface FindByIdGenre{}
+    public @interface FindByIdGenre
+    {
+    }
 
     @Retention(RetentionPolicy.RUNTIME)
     @Target(ElementType.METHOD)
@@ -95,5 +103,7 @@ public class SwaggerGenre {
                     )
             }
     )
-    public @interface UpdateGenreName{}
+    public @interface UpdateGenreName
+    {
+    }
 }
