@@ -30,7 +30,7 @@ The application simulates the logical part (back-end) of a movie streaming platf
 
 ##
 ## Available endpoints
-http://34.95.155.20:8080/docs-edplus.html
+http://34.95.155.20:8080/docs-edplus.html(Under maintenance)
 
 ##
 ## Author
