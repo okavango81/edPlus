@@ -29,7 +29,7 @@ The application simulates the logical part (back-end) of a movie streaming platf
 ![Instance Diagram](https://github.com/okavango81/assets/blob/main/edPlusInstanceDiagram.jpg?raw=true)
 
 ##
-## Available endpoints  (Under maintenance)
+## Available endpoints
 http://34.176.76.100:8080/docs-edplus.html
 
 ##
