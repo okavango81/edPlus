@@ -18,7 +18,7 @@ The application simulates the logical part (back-end) of a movie streaming platf
 - MySQL
 
 ## Implantation
-- Plataforms : Google Cloud Platform / Amazon Web service
+- Plataforms : Google Cloud Platform / Amazon Web Service
 - Database : MySQL
 
 ##
