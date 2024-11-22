@@ -16,31 +16,36 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/characters")
 @Tag(name = "Character", description = "operations for characters")
-public class CharacterController {
+public class CharacterController
+{
 
     private final CharacterService characterService;
 
     @PostMapping
     @SwaggerCharacter.NewCharacter
-    public ResponseEntity<Character> registration(@Valid @RequestBody CharacterRegisterDTO character){
+    public ResponseEntity<Character> registration(@Valid @RequestBody CharacterRegisterDTO character)
+    {
         return characterService.register(character);
     }
 
     @GetMapping
     @SwaggerCharacter.ReturnALlCharacters
-    public ResponseEntity<List<Character>> returnAll(){
+    public ResponseEntity<List<Character>> returnAll()
+    {
         return characterService.all();
     }
 
     @GetMapping("/{id}")
     @SwaggerCharacter.FindByIdCharacter
-    public ResponseEntity<Character> findById(@PathVariable Long id){
+    public ResponseEntity<Character> findById(@PathVariable Long id)
+    {
         return characterService.searchById(id);
     }
 
     @PatchMapping("/{id}")
     @SwaggerCharacter.UpdateCharacterName
-    public ResponseEntity<Character> updateName(@Valid @RequestBody CharacterRegisterDTO character, @PathVariable Long id){
+    public ResponseEntity<Character> updateName(@Valid @RequestBody CharacterRegisterDTO character, @PathVariable Long id)
+    {
         return characterService.update(character, id);
     }
 

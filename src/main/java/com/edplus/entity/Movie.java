@@ -24,7 +24,7 @@ public class Movie {
     private String title;
 
     @Column(nullable = false, length = 3)
-    private String minutes;
+    private Integer minutes;
 
     @Column(length = 7)
     private String duration;
@@ -58,7 +58,7 @@ public class Movie {
     private List<Character> papers = new ArrayList<>();
 
     //construtor
-    public Movie(String title, String minutes, String releaseYear, String classification, String cardURL, String mainURL, String synopsis) {
+    public Movie(String title, Integer minutes, String releaseYear, String classification, String cardURL, String mainURL, String synopsis) {
 
         this.title = title.toUpperCase();
         this.minutes = minutes;
@@ -71,12 +71,10 @@ public class Movie {
     }
 
 
-    public String fromMinutesToHoursAndMinutes(String m) {
+    public String fromMinutesToHoursAndMinutes(Integer m) {
         try {
-            Integer min = Integer.parseInt(String.valueOf(m));
-            Integer hours = min / 60;
-            Integer minutes = min % 60;
-
+            Integer hours = m / 60;
+            Integer minutes = m % 60;
             return String.format("%sh %sm", hours, minutes);
 
         } catch (NumberFormatException e) {

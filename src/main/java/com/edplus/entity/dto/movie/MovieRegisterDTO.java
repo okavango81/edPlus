@@ -11,10 +11,10 @@ public class MovieRegisterDTO {
     @Size(min = 2, message = "must have at least {min} characters")
     private String title;
 
-    @NotBlank(message = "must not be null")
+    @NotNull(message = "must not be null")
     @Min(value = 1, message = "must be greater than 0 (zero)")
     @Max(value = 270, message = "The maximum number must be {value}")
-    private String minutes;
+    private Integer minutes;
 
 
     @NotBlank(message = "must not be null")
