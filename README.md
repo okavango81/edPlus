@@ -18,7 +18,7 @@ The application simulates the logical part (back-end) of a movie streaming platf
 - MySQL
 
 ## Implantation
-- Plataform : Google Cloud Platform
+- Plataforms : Google Cloud Platform / Amazon Web Service
 - Database : MySQL
 
 ##
@@ -29,8 +29,8 @@ The application simulates the logical part (back-end) of a movie streaming platf
 ![Instance Diagram](https://github.com/okavango81/assets/blob/main/edPlusInstanceDiagram.jpg?raw=true)
 
 ##
-## Available endpoints  (Under maintenance)
-http://34.95.155.20:8080/docs-edplus.html
+## Available endpoints
+http://34.176.76.100:8080/docs-edplus.html
 
 ##
 ## Author
